@@ -57,8 +57,13 @@ function init(){
 // start match
 function startMatch(){
   if(matchWords()){
-    console.log('Match!');
+    isPlaying = true;
+    time = 6;
+    showWord(words);
+    wordInput.value = "";
+    score++;
   }
+  scoreDisplay.innerHTML = score;
 }
 // match currentWord to wordInput
 function matchWords(){
