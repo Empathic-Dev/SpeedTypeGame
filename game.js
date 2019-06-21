@@ -45,7 +45,9 @@ const words = [
 function init(){
   console.log('Stay Focused, You Got This! I love you!!');
   // load random word from array
-  showWord(words)
+  showWord(words);
+  // call countdown every sec
+  setInterval(countdown, 1000);
 }
 
 // pick & show random word
@@ -54,4 +56,19 @@ function showWord(words){
   const randIndex = Math.floor(Math.random() * words.length);
   // output random word
   currentWord.innerHTML = words[randIndex];
+}
+
+// countdown timer
+function countdown(){
+  // make sure time is not run out
+  if(time > 0){
+    // decrement
+    time--;
+    
+  } else if(time === 0){
+    // game is over
+    isPlaying = false;
+  }
+  // show time
+  timeDisplay.innerHTML = time;
 }
