@@ -46,10 +46,29 @@ function init(){
   console.log('Stay Focused, You Got This! I love you!!');
   // load random word from array
   showWord(words);
+  // start matching on word input
+  wordInput.addEventListener('input', startMatch)
   // call countdown every sec
   setInterval(countdown, 1000);
   // check status of game
   setInterval(checkStatus, 50);
+}
+
+// start match
+function startMatch(){
+  if(matchWords()){
+    console.log('Match!');
+  }
+}
+// match currentWord to wordInput
+function matchWords(){
+  if(wordInput.value === currentWord.innerHTML){
+    message.innerHTML = 'Correct!';
+    return true;
+  } else {
+    message.innerHTML = '';
+    return false;
+  }
 }
 
 // pick & show random word
