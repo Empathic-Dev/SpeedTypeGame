@@ -1,7 +1,13 @@
 window.addEventListener('load', init);
 
-// global var
-let time = 5;
+// globals
+
+// available levels
+const levels = {easy: 5, medium: 3, hard: 1};
+// change levels
+const currentLevel = levels.easy;
+
+let time = currentLevel;
 let score = 0;
 let isPlaying; // when the player is typing: true, when the player wins/looses: false
 
@@ -44,6 +50,8 @@ const words = [
 //Initialize Game
 function init(){
   console.log('Stay Focused, You Got This! I love you!!');
+  // show number of sec
+  seconds.innerHTML = currentLevel;
   // load random word from array
   showWord(words);
   // start matching on word input
@@ -58,7 +66,7 @@ function init(){
 function startMatch(){
   if(matchWords()){
     isPlaying = true;
-    time = 6;
+    time = currentLevel + 1;
     showWord(words);
     wordInput.value = "";
     score++;
