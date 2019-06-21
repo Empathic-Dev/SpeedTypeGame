@@ -9,7 +9,37 @@
   <title>Empathy Type | A Speed Typing Game by The Empathic Dev</title>
 </head>
 <body>
-  <h1>Lets Build This Shit!</h1>
+  <header>
+    <h1>Empathy Type</h1>
+    <h2>a speed typing game build with pure JavaScript</h2>
+  </header>
+  <main>
+    <!-- Word & Input -->
+      <p class="typeBelow">Type the given word within 
+        <span class="text-success" id="seconds">5</span>
+      </p>
+
+      <h3 id="current-word">Words</h3>
+
+      <input type="text" id="word-input" placeholder="Start typing..." autofocus>
+
+      <h4 class="message">Game Over/Correct!</h4>
+
+      <!-- Time & Score Columns -->
+      <h3>Time Left:
+        <span class="time">0</span>
+      </h3>
+
+      <h3>Score:
+        <span class="score">0</span>
+      </h3>
+
+      <!-- Instructions -->
+      <div>
+        <h5>Instructions:</h5>
+        <p>Type each word in the given amount of seconds to score. To play, just start typing the current word and your score will go up.</p>
+      </div>
+  </main>
   <script src="game.js"></script>
 </body>
 </html>
