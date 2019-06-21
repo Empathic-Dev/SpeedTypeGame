@@ -42,7 +42,16 @@ const words = [
 ];
 
 //Initialize Game
-
 function init(){
-  console.log('Stay Focused, You Got This! I love you!!');  
+  console.log('Stay Focused, You Got This! I love you!!');
+  // load random word from array
+  showWord(words)
+}
+
+// pick & show random word
+function showWord(words){
+  // Generate random array index
+  const randIndex = Math.floor(Math.random() * words.length);
+  // output random word
+  currentWord.innerHTML = words[randIndex];
 }
