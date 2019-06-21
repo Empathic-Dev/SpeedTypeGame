@@ -63,7 +63,12 @@ function startMatch(){
     wordInput.value = "";
     score++;
   }
-  scoreDisplay.innerHTML = score;
+  // if score is -1, display 0
+  if(score === -1){
+    scoreDisplay.innerHTML = '0';
+  } else {
+    scoreDisplay.innerHTML = score;
+  }
 }
 // match currentWord to wordInput
 function matchWords(){
@@ -103,5 +108,6 @@ function countdown(){
 function checkStatus(){
   if(!isPlaying && time === 0){
     message.innerHTML = 'Game Over';
+    score = -1;
   }
 }
